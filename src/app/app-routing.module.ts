@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ItemListComponent } from './items/item-list/item-list.component';
+
 const routes: Routes = [
   {
     path: '',
     children: []
+  },
+  {
+    path: "items", component: ItemListComponent
   }
 ];
 

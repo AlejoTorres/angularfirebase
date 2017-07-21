@@ -1,0 +1,20 @@
+<h3>New Task Form</h3>
+
+<div class="form-group">
+  <fieldset>  
+    <input placeholder="Item Title" class="form-control" [(ngModel)]="item.title" required minlength="2" maxlength="23" #title='ngModel' autofocus>
+    <div *ngIf="title.dirty">
+      <span *ngIf='title.errors; then errors else valid'>template renders here...</span>
+    </div>
+
+    <button class="btn btn-primary" (click)='createItem()' [disabled]="!title.valid">Create</button>
+  </fieldset>
+</div>
+
+<ng-template #valid>
+  <p class="text-success">looks good!</p>
+</ng-template>
+
+<ng-template #errors>
+  <p class="text-danger">form contains errors!</p>
+</ng-template>

@@ -1,0 +1,11 @@
+<h1>Items</h1>
+
+<div *ngFor="let item of items | async" class="card"> 
+  <item-de [item]='item'></item-de>
+</div>
+
+<button type="button" class="btn btn-danger" (click)="deletItems()">Delete Entire List</button>
+
+<hr>
+
+<item-form></item-form>

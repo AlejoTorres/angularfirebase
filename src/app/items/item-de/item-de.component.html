@@ -1,0 +1,13 @@
+<h5 class="card-header">{{ item.title || 'missing title' }}</h5>
+
+<div class="card-block">
+    Active: {{ item.active }}<br>
+    {{ item.timeStamp | date: 'medium' }}
+</div>
+
+<div class="card-footer text-muted text-xs-center">
+    <span (click)='updateTimeStamp()'>Update Timestamp</span>
+    <span *ngIf='item.active' (click)='updateActive(false)'>Mark Complete</span>
+    <span *ngIf='!item.active' (click)='updateActive(true)'>Mark Active</span>
+    <span (click)='deleteItem()'>Delete</span>
+</div>
